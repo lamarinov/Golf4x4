@@ -25,9 +25,18 @@ public class SearchPage extends BasePage {
         acceptCookiesIfPresent();
     }
 
-    public void searchForBrand(String brand) {
+    public void searchForBrand(String brand)  {
         WebElement searchElement = find(By.name("marka"));
         searchElement.sendKeys(brand);
+        WebElement activeFound = find(By.xpath("//*[@id=\"akSearchMarki\"]/div[2]/div[128]/span[1]"));
+        activeFound.click();
+    }
+
+    public void searchForModel(String model) {
+        WebElement modelMenu = find(By.name("model_show"));
+        modelMenu.click();
+        WebElement modelCheckBox = find(By.xpath("//*[@id=\"akSearchModeli\"]/div/label[18]/input"));
+        modelCheckBox.click();
     }
 
     public void click4x4() {

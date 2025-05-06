@@ -27,6 +27,7 @@ public class Main {
             SearchPage searchPage = new SearchPage(driver);
             searchPage.open();
             searchPage.searchForBrand("VW");
+            searchPage.searchForModel("Golf");
             searchPage.click4x4();
             searchPage.pressSearchButton();
             Thread.sleep(1000);

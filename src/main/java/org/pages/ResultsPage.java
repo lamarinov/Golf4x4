@@ -80,7 +80,7 @@ public class ResultsPage extends BasePage {
                 if((top + vip +top) == 0) break;
                 driver.get((incrementPageNumber(currentURL)));
 
-                // Optional: wait a bit for DOM to update
+                //  wait a bit for DOM to update
                 Thread.sleep(500);
             } catch (TimeoutException e) {
                 logger.info("The page failed to load in time");
@@ -95,20 +95,6 @@ public class ResultsPage extends BasePage {
         allCount.add(countBEST);
         return allCount;
 
-    }
-
-    public int getNumberOfVIPCars() {
-        List<WebElement> vipCars = findAll(By.className(".item.VIP."));
-        return vipCars.size();
-    }
-
-    public int getNumberOfTOPCars() {
-        List<WebElement> topCars = findAll(By.xpath("//div[contains(@class, 'item') and contains(@class, 'TOP')]"));
-        return topCars.size();
-    }
-    public int getNumberOfBESTCars() {
-        List<WebElement> bestCars = findAll(By.className(".item.BEST."));
-        return bestCars.size();
     }
 
 }
